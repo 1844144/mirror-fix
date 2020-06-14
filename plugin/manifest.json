@@ -1,0 +1,29 @@
+{
+  "name": "FIX Praktikum",
+  "options_page": "options.html",
+  "background": {
+    "page": "background.html"
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon-34.png"
+  },
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://praktikum-admin.prestable.yandex-team.ru/*"],
+      "js": ["index.js"]
+    },
+    {
+      "matches": ["https://praktikum.prestable.yandex.ru/*"],
+      "js": ["index.js"]
+    }
+  ],
+  // "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'; worker-src 'self' data: blob: ;",
+  "content_security_policy": "script-src 'self'; script-src-elem 'self' data: blob:; worker-src 'self' data: blob:; object-src 'self'",
+  "manifest_version": 2,
+  "version": "0.1"
+}
+
